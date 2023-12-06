@@ -1,0 +1,141 @@
+/* ### Primary
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): hsl(277, 64%, 61%)
+
+### Neutral
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6) */
+
+.attribution {
+    font-size: 11px; text-align: center;
+    margin-top: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    background-color: hsl(244, 38%, 16%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2rem;
+}
+
+.image {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(277, 64%, 61%);
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 75%;
+    mix-blend-mode: multiply;
+}
+
+.text {
+    margin: 4rem;
+}
+
+h1, .num {
+    color: white;
+}
+
+span {
+    color: hsl(277, 64%, 61%);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.main-p {
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.heading {
+    color: hsla(0, 0%, 100%, 0.6);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem 0 0;
+}
+
+.num {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+}
+
+@media (max-width:768px) {
+    body {
+        text-align: center;
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .num {
+        margin-top: 2rem;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .text {
+        margin: 2rem;
+    }
+
+    .image img {
+        display: block;
+    }
+}
